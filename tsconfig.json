@@ -1,0 +1,51 @@
+{
+  "include": [
+    "./src/server/*",
+    "./src/server/**/*",
+    "./src/config/*",
+    "./src/tests/*",
+    "./src/utils/*"
+  ],
+  "exclude": [
+    "./node_modules/*",
+    "./dist/*",
+    "./src/client/*",
+    "./src/client/**/*"
+  ],
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "newLine": "lf",
+    "noEmit": false,
+    "noEmitOnError": true,
+    "outDir": "./dist",
+    "removeComments": false,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext"],
+    "target": "ESNext",
+    "pretty": true
+  },
+  "watchOptions": {
+    "excludeDirectories": [
+      "node_modules",
+      "./dist",
+      "./src/client/*",
+      "./src/client/**/*"
+    ]
+  }
+}
