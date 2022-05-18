@@ -1,10 +1,11 @@
 {
   "env": {
-    "browser": true,
     "es2021": true,
     "node": true
   },
-  "extends": ["airbnb-base", "plugin:lit/recommended"],
+  "extends": [
+    "airbnb-base"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -12,6 +13,7 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
+    "no-console": ["error", { "allow": ["error", "warn"] }],
     "import/no-unresolved": "error",
     "import/extensions": [
       "error",
@@ -24,10 +26,15 @@
         "tsx": "never"
       }
     ],
-    "no-unused-vars": [
-      "error",
-      { "varsIgnorePattern": "HTMLElementTagNameMap" }
-    ]
+    "import/no-extraneous-dependencies": [
+      "error", {
+        "devDependencies": true, 
+        "optionalDependencies": false, 
+        "peerDependencies": false, 
+        "packageDir": "./"
+      }
+    ],
+    "no-restricted-syntax": "warn"
   },
   "settings": {
     "import/parsers": {
@@ -39,5 +46,18 @@
       }
     },
     "project": ["./tsconfig.json"]
-  }
+  },
+  "globals": {
+    "describe": "readonly",
+    "it": "readonly"
+  },
+  "overrides": [
+    {
+      "files": "./test/*.test.js",
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
 }
+
